@@ -7,8 +7,6 @@
 #include <Protocol/DevicePathFromText.h>
 #include <Protocol/SimpleFileSystem.h>
 
-#include <Guid/GlobalVariable.h>
-
 #include <IndustryStandard/PeImage.h>
 
 #include "globals.h"
@@ -27,18 +25,6 @@ MemoryCopy(
 	for(UINT8 *d = Dest, *s = Src; C--; *d++ = *s++);
 }
 
-#pragma function(memset)
-VOID
-EFIAPI
-memset(
-	IN VOID		*Dest,
-	IN UINTN	Value,
-	IN UINTN	C
-) {
-	for(UINT8 *d = Dest; C--; *d++ = Value);
-}
-
-// Used before unhook gBS->ExitBootServices
 VOID
 EFIAPI
 SetGlobalPatchStatus(

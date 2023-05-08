@@ -123,6 +123,8 @@ UefiMain(
 		Print(L"[!] Cannot install bootmanager hooks!\n\r");
 		gBS->UnloadImage(BootmgfwHandle);
 
+		gBS->ExitBootServices = OriginalExitBootServicesAddress;
+
 		return Status;
 	}
 
