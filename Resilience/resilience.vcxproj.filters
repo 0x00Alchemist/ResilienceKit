@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source">
+      <UniqueIdentifier>{143ea85a-9c9e-4df4-adae-6d95de533c08}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headers">
+      <UniqueIdentifier>{255eeb02-8d59-4806-8b4e-e89b52c2dd2e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Patches">
+      <UniqueIdentifier>{c7a56cb9-3108-4acd-94ab-e4158bf658b0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Hooks">
+      <UniqueIdentifier>{9e72b07a-7eda-44f6-9505-0abf04ee27c2}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="EfiMain.c">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Utils.c">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Bootmgfw.c">
+      <Filter>Source\Patches</Filter>
+    </ClCompile>
+    <ClCompile Include="Hook.c">
+      <Filter>Source\Hooks</Filter>
+    </ClCompile>
+    <ClCompile Include="Winload.c">
+      <Filter>Source\Patches</Filter>
+    </ClCompile>
+    <ClCompile Include="Mapper.c">
+      <Filter>Source</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="globals.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="utils.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="hook.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="nt.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Payload.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Mapper.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
